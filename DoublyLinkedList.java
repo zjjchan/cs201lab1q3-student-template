@@ -147,12 +147,11 @@ public class DoublyLinkedList<E> {
             curr = curr.getNext();
         }
 
-        if (nullCount != 0) {
+        if (nullCount != 0 && nullCount != size()) {
             trailer.setPrev(lastNonNull);
             lastNonNull.setNext(trailer);
             lastNull.setNext(firstNonNull);
             firstNonNull.setPrev(lastNull);
         }
-
     }
 }
